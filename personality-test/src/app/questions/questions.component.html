@@ -1,0 +1,24 @@
+<form [formGroup]="questionsForm" (ngSubmit)="handleSubmit()" class="questionary-form">
+
+    <mat-stepper *ngIf="questions?.length" formArrayName="questions" linear orientation="vertical">
+        <div *ngFor="let question of questions; let i = index">
+            <mat-step [formGroupName]="i" [stepControl]="getStepControl(i)">
+                <ng-template matStepLabel>{{"Step " + (i + 1)}}</ng-template>
+                <input type="text" formControlName="id" hidden>
+                <br>
+                <h3>{{question.content}}</h3>
+                <div *ngFor="let answer of question.answers">
+                    <input type="radio" formControlName="answer" [id]="answer.id" [value]="answer.rate">
+                    <label [for]="answer.id">{{answer.content}}</label>
+                </div>
+                <br>
+                <div>
+                    <button *ngIf="i > 0" mat-button matStepperPrevious type="button">Back</button>
+                    <button *ngIf="i < questions.length - 1" mat-button [disabled]="getStepControl(i).invalid" matStepperNext type="button">Next</button>
+                    <button *ngIf="i === questions.length - 1" mat-button [disabled]="questionsForm.invalid" type="submit">Submit</button>
+                </div>
+            </mat-step>
+        </div>
+    </mat-stepper>
+
+</form>

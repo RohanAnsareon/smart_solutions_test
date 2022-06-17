@@ -1,0 +1,64 @@
+<mat-progress-bar mode="determinate" [value]="result" class="progress"></mat-progress-bar>
+
+<div style="display: flex; justify-content: space-between;">
+    <h3 style="margin: 1%;">Introvert</h3>
+    <h3 style="margin: 1%;">Extrovert</h3>
+</div>
+
+<mat-card class="card">
+    <mat-card-content>
+        <h1>Your result is:</h1>
+        <h1 [ngStyle]="{'color': isExtrovert ? 'green' : 'red'}">{{isExtrovert ? 'Extrovert ' + (result) + '%' :
+            'Introvert ' + (100 - result) + '%'}}</h1>
+
+        <div *ngIf="isExtrovert">
+            Have you ever watched “Ferris Bueller’s Day Off” and thought, “Why am I watching this movie by myself? I
+            should be out with friends, hijacking a parade float”? Maybe that exact thought never occurred to you, but
+            if you feel akin to Ferris, you’re probably an extrovert.
+
+            In general terms, an extrovert is a person who is motivated by external stimuli. Extroverts tend to really
+            like people and socializing and to have outgoing, vocal personalities.
+
+            But there’s more to being an extrovert than talkativeness and wanting to party. Read on to learn more about
+            extroverted personality traits and what it really means to be an extrovert.
+
+            The makeup of an extrovert
+            The introvert/extrovert divide has been around for about 100 years. In 1921, Carl Jung classified
+            personality into two basic types: introvert and extravert.
+
+            Jung chose the spelling “extravert” because it made sense in Latin, but we can’t help but notice “extra” is
+            also a good way to describe these outgoing folks. Over time, the spelling changed to “extrovert” and
+            psychologists found there was a lot more nuance to personality types than Jung originally prescribed.
+
+            Some personality traits are common for a majority of extroverts, but not all these traits apply to all
+            extroverts. Personality is a wide spectrum, and everyone has a different mix of traits.
+        </div>
+
+        <div *ngIf="!isExtrovert">
+            Some introverted traits seem to be ingrained. Others are a result of the culture we live in. For example,
+            many introverts have learned to cope with constant overstimulation by putting up a wall. This leads people
+            to believe that introverts are cold, or standoffish, but this is not our true nature. The innate qualities
+            that most introverts share are a love of introspection, a need for solitude, and a slower, more focused
+            communication style.
+
+            Introverts love introspection
+            “Living is like tearing through a museum. Not until later do you really start absorbing what you saw,
+            thinking about it, looking it up in a book, and remembering – because you can’t take it in all at once.”
+            ~Audrey Hepburn
+
+            For introverts, introspection comes as naturally as breathing. We love to explore the colorful landscapes of
+            our imagination. Many of us have been criticized for our mind wandering. We’ve been told to get our head out
+            of the clouds and stop daydreaming. What people don’t understand is that there is a good reason for our
+            inward ways.
+
+            The outside world often feels like an assaulting force for introverts. At every turn there are energy
+            vampires threatening to suck us dry. Turning inward is as much a means of survival as it is a source of
+            comfort. Our love of introspection also brings meaning and direction to our life.
+
+            I can remember contemplating the transience of life at five years old and feeling overwhelmed with emotion.
+            I knew that our time here is short and ever-changing. Now that I’m all grown up, I spend ample time thinking
+            about the very same thing. Today, introspection is a necessary part of my career as a writer and coach for
+            introverts. It provides sustenance and shade from a world of neon lights and fluorescent personalities.
+        </div>
+    </mat-card-content>
+</mat-card>
